@@ -16,7 +16,7 @@ RUN apt-get update && \
 
 
 RUN cd /tmp/ && \
-    curl -k -LO "http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip" -H 'Cookie: oraclelicense=accept-securebackup-cookie' &&   \
+    curl -k -LO "http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip" -H 'Cookie: oraclelicense=accept-securebackup-cookie' --output  ~/jce_policy-8.zip  &&   \
     unzip ~/jce_policy-8.zip  ~/ &&  \
     rm ~/jce_policy-8.zip   &&  \
     yes |cp -v -f  ~/UnlimitedJCEPolicyJDK8/*.jar /usr/lib/jvm/java-8-oracle/jre/lib/security/
